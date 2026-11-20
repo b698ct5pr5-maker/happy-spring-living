@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>春满里挑战赛 · 接住整个春天</title>
+<meta name="description" content="春满里挑战赛：蓝与黄的向日葵治愈系小游戏，选择明棠、周尽野或邀请好友，一起接住星光。">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23FFC93C'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%238A5A22'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ===== 可复用矢量图形 ===== -->
+<svg class="svg-defs" aria-hidden="true">
+  <symbol id="ico-sunflower" viewBox="0 0 100 100">
+    <g fill="#FFC93C">
+      <ellipse cx="50" cy="16" rx="9" ry="18"/><ellipse cx="50" cy="84" rx="9" ry="18"/>
+      <ellipse cx="16" cy="50" rx="18" ry="9"/><ellipse cx="84" cy="50" rx="18" ry="9"/>
+      <ellipse cx="26" cy="26" rx="9" ry="17" transform="rotate(-45 26 26)"/>
+      <ellipse cx="74" cy="26" rx="9" ry="17" transform="rotate(45 74 26)"/>
+      <ellipse cx="26" cy="74" rx="9" ry="17" transform="rotate(45 26 74)"/>
+      <ellipse cx="74" cy="74" rx="9" ry="17" transform="rotate(-45 74 74)"/>
+    </g>
+    <circle cx="50" cy="50" r="21" fill="#8A5A22"/><circle cx="50" cy="50" r="16" fill="#A9702B"/>
+  </symbol>
+  <symbol id="ico-star" viewBox="0 0 100 100">
+    <path d="M50 6 L62 38 L96 38 L69 58 L79 92 L50 71 L21 92 L31 58 L4 38 L38 38 Z" fill="#FFD85E" stroke="#F6A21E" stroke-width="4" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<div class="page-deco" aria-hidden="true">
+  <svg class="deco deco-1"><use href="#ico-sunflower"/></svg>
+  <svg class="deco deco-2"><use href="#ico-star"/></svg>
+  <svg class="deco deco-3"><use href="#ico-sunflower"/></svg>
+  <svg class="deco deco-4"><use href="#ico-star"/></svg>
+</div>
+
+<main class="stage">
+
+  <!-- ===== 桌面端侧栏 ===== -->
+  <aside class="side-panel">
+    <div class="side-kicker">VIBECODING PROTOTYPE / CHUNMANLI</div>
+    <h1 class="side-title">春满里<br><em>挑战赛</em></h1>
+    <p class="side-lead">蓝是海，黄是向日葵。<br>接住落下来的星光，直到天亮。</p>
+
+    <div class="side-block">
+      <div class="side-label">画面 VISUAL</div>
+      <div class="ref-thumbs">
+        <img src="assets/bg-home.jpg" alt="首屏背景参考">
+        <img src="assets/bg-select.jpg" alt="第二页背景参考">
+      </div>
+      <p class="side-text">首屏 · 橙黄花田　/　选择页 · 蓝紫山丘</p>
+    </div>
+
+    <div class="side-block">
+      <div class="side-label">流程 FLOW</div>
+      <ol class="flow-list">
+        <li><b>01</b> 首页展示</li>
+        <li><b>02</b> 选择伙伴</li>
+        <li><b>03</b> 接星光 · 黑夜转白天</li>
+        <li><b>04</b> 一张可分享的结果卡</li>
+      </ol>
+    </div>
+
+    <div class="side-block">
+      <div class="side-label">操作 CONTROL</div>
+      <p class="side-text">← → / A D 左右移动，或拖动角色。<br>接 🌻 💧 得分，躲 💣 ⚡，吃 ⭐ 短暂无敌。<br>联机：A D 控明棠，← → 控周尽野。</p>
+    </div>
+
+    <div class="side-foot">
+      <span>视觉 · 参考背景图 / 涂鸦手写字体 / 抠图立绘</span>
+      <span>玩法节奏参考 · 《伞伞快降》</span>
+    </div>
+  </aside>
+
+  <!-- ===== 手机外框 ===== -->
+  <div class="device" id="device" data-screen="title">
+    <div class="device-notch" aria-hidden="true"></div>
+    <div class="statusbar">
+      <span class="sb-time">9:41</span>
+      <span class="sb-icons"><i></i><i></i><i></i><b>100%</b></span>
+    </div>
+
+    <div class="device-screen">
+
+      <!-- ================= 第 1 页：首页（背景 bg-home.jpg） ================= -->
+      <section class="screen is-active" id="screen-title">
+        <div class="bg-photo bg-home" aria-hidden="true"></div>
+        <div class="home-veil" aria-hidden="true"></div>
+
+        <div class="hero-top">
+          <span class="hero-badge">SPRING 2026 · 春日限定</span>
+        </div>
+
+        <div class="hero-title-wrap">
+          <p class="hero-kicker">WELCOME TO</p>
+          <h1 class="hero-title">春满里挑战赛</h1>
+          <p class="hero-sub">和喜欢的人，一起接住整个春天 ☀</p>
+        </div>
+
+        <div class="hero-art">
+          <span class="hero-glow"></span>
+          <img src="assets/duo-hero.png" alt="明棠与周尽野的Q版抠图立绘">
+        </div>
+
+        <div class="hero-bottom">
+          <button class="btn btn-primary btn-lg" id="btn-enter" type="button">
+            进入游戏 <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= 第 2 页：伙伴选择（背景 bg-select.jpg） ================= -->
+      <section class="screen" id="screen-select">
+        <div class="bg-photo bg-select" aria-hidden="true"></div>
+        <div class="sel-veil" aria-hidden="true"></div>
+
+        <div class="sel-top">
+          <button class="icon-btn" id="btn-select-back" type="button" aria-label="返回">‹</button>
+          <div class="sel-progress"><i class="on"></i><i></i><i></i></div>
+        </div>
+
+        <div class="sel-intro">
+          <h2>春满里挑战赛<br>请选择你的伙伴。</h2>
+        </div>
+
+        <div class="cast-stage" id="role-list">
+          <!-- 明棠 -->
+          <button class="cast is-selected" type="button" data-mode="mingtang">
+            <div class="cast-info">
+              <b class="cast-name">明棠</b>
+              <div class="cast-tags">
+                <span class="tag tag-core">核心技能：耐心</span>
+                <span class="tag">闪现</span>
+                <span class="tag">微笑天使</span>
+              </div>
+            </div>
+            <div class="cast-figure mt">
+              <span class="cast-glow"></span>
+              <img src="assets/char-mingtang.png" alt="明棠">
+            </div>
+            <span class="cast-plate">01</span>
+            <span class="cast-pick" role="button" tabindex="0" aria-label="选择明棠并开始">就选TA</span>
+          </button>
+
+          <!-- 周尽野 -->
+          <button class="cast" type="button" data-mode="jinye">
+            <div class="cast-info">
+              <b class="cast-name">周尽野</b>
+              <div class="cast-tags">
+                <span class="tag">体能冠军</span>
+                <span class="tag">治愈系</span>
+              </div>
+            </div>
+            <div class="cast-figure jy">
+              <span class="cast-glow"></span>
+              <img src="assets/char-jinye.png" alt="周尽野">
+            </div>
+            <span class="cast-plate">02</span>
+            <span class="cast-pick" role="button" tabindex="0" aria-label="选择周尽野并开始">就选TA</span>
+          </button>
+
+          <!-- 邀请好友联机 -->
+          <button class="cast cast-duo" type="button" data-mode="duo">
+            <div class="cast-info">
+              <b class="cast-name">邀请好友联机</b>
+              <div class="cast-tags">
+                <span class="tag tag-core">并肩作战</span>
+                <span class="tag">默契加分</span>
+              </div>
+            </div>
+            <div class="cast-figure duo">
+              <span class="cast-glow"></span>
+              <img src="assets/char-duo.png" alt="邀请好友联机">
+            </div>
+            <span class="cast-plate">03</span>
+            <span class="cast-pick" role="button" tabindex="0" aria-label="选择邀请好友联机并开始">就选TA</span>
+          </button>
+        </div>
+
+      </section>
+
+      <!-- ================= 第 3 页：游戏（玩法逻辑不变，黑夜底图沿用） ================= -->
+      <section class="screen" id="screen-game">
+        <div class="game-top">
+          <div class="hud-line">
+            <button class="icon-btn dark" id="btn-game-back" type="button" aria-label="退出本局">‹</button>
+            <div class="hud-who">
+              <img id="hud-avatar" src="assets/char-mingtang.png" alt="">
+              <span id="hud-name">明棠</span>
+            </div>
+            <div class="hud-score">
+              <small>星光值</small>
+              <b id="hud-score">0</b>
+            </div>
+            <button class="icon-btn dark small" id="btn-sound" type="button" aria-label="声音开关">♪</button>
+          </div>
+          <div class="hud-line second">
+            <div class="hud-hearts" id="hud-hearts">♥ ♥ ♥</div>
+            <div class="hud-timer" id="hud-timer">45.0s</div>
+            <div class="hud-combo" id="hud-combo">连击 ×1</div>
+          </div>
+          <div class="progress"><i id="progress-bar"></i></div>
+          <div class="power-badge" id="power-badge">⭐ 星光时间 5.0s</div>
+        </div>
+
+        <div class="play-wrap" id="play-wrap">
+          <canvas id="game-canvas"></canvas>
+          <div class="countdown" id="countdown"><span>3</span></div>
+          <div class="toast" id="game-toast"></div>
+          <div class="pause-panel" id="pause-panel">
+            <svg><use href="#ico-sunflower"/></svg>
+            <h3>先歇一会儿</h3>
+            <p>花不会谢，天也会亮。</p>
+            <button class="btn btn-primary" id="btn-resume" type="button">继续出发</button>
+            <button class="text-btn" id="btn-quit" type="button">结束这一局</button>
+          </div>
+          <div class="touch-pad" id="touch-pad">
+            <button class="pad-btn" id="pad-left" type="button" aria-label="向左">◀</button>
+            <span class="pad-tip" id="pad-tip">拖动角色也可以</span>
+            <button class="pad-btn" id="pad-right" type="button" aria-label="向右">▶</button>
+          </div>
+          <div class="duo-tip" id="duo-tip">左半屏拖动明棠 · 右半屏拖动周尽野</div>
+        </div>
+
+        <div class="game-foot">
+          <span id="foot-hint">← → / A D 移动 · 按住屏幕左右键也行</span>
+          <button class="text-btn" id="btn-pause" type="button">暂停 ⏸</button>
+        </div>
+      </section>
+
+      <!-- ================= 第 4 页：结尾（只生成一张结果卡片） ================= -->
+      <section class="screen" id="screen-result">
+        <!-- 昼夜场景背景：黑夜→白天渐变 + 太阳东升西落轨迹（纯装饰，不影响卡片） -->
+        <div class="result-scene" aria-hidden="true">
+          <div class="scene-day"></div>
+          <div class="scene-night"></div>
+          <div class="scene-stars"></div>
+          <div class="scene-sun"><i class="sun-core"></i><i class="sun-halo"></i></div>
+          <div class="scene-cloud cloud-a"></div>
+          <div class="scene-cloud cloud-b"></div>
+          <div class="scene-veil"></div>
+        </div>
+        <div class="end-head">
+          <span class="end-eyebrow">A LITTLE SURPRISE FOR YOU</span>
+          <h2 class="end-title">这一程的纪念卡</h2>
+          <p class="end-sub"> Automatically generated · 自动生成</p>
+        </div>
+
+        <div class="result-photo-frame">
+          <div class="card-label"><span class="dot"></span> 你的专属结果卡 <span class="card-label-en">SHARE IT</span></div>
+          <canvas id="result-canvas" aria-label="自动生成的结果卡片"></canvas>
+          <div class="card-loading" id="card-loading">正在把这一程画成卡片…</div>
+        </div>
+
+        <div class="res-actions">
+          <button class="btn btn-primary btn-lg" id="btn-save" type="button">保存卡片 ⤓</button>
+          <button class="btn btn-share btn-lg" id="btn-share" type="button">分享卡片 ⇪</button>
+          <div class="res-actions-row">
+            <button class="btn btn-glass" id="btn-replay" type="button">再玩一次</button>
+            <button class="btn btn-glass" id="btn-change" type="button">换个伙伴</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<script src="assets/portraits.js"></script>
+<script src="assets/quotes.js"></script>
+<script src="card.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
